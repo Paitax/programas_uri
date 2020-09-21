@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    float numero; 
+    int valorpos, contador;
+    for (contador = 1; contador <=6; contador++)
+    {
+    scanf("%f", &numero);
+    if(numero >= 0){   
+        valorpos=valorpos+1;
+        }
+    }
+    printf("%d valores positivos\n", valorpos);
+    
+    return 0;
+}
