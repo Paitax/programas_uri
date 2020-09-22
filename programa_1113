@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+  int n, x, y;
+    
+  for (n = 0;; n++)
+  {
+    scanf("%d", &x);
+    scanf("%d", &y);
+
+    if (x == y)
+    {
+    break; 
+    }
+    else
+    {
+    if (x < y)
+    {
+    printf("Crescente\n");
+    }
+    else if (x > y)
+    {
+    printf("Decrescente\n");
+    }
+    }
+  }
+    
+    return 0;    
+}
