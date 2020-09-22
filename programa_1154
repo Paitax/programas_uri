@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main(){
+    
+    float idade, soma = 0, media, x = 0;
+
+    for (;;){
+    scanf("%f", &idade);
+    if (idade > 0){
+      soma += idade;
+      x++;
+      }
+    else{
+      break; 
+      }
+    }
+    media = soma / x;
+    
+    printf("%.2f\n", media);
+    
+    return 0;
+}
