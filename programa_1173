@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(){
+    int x, i, v[10];
+
+    scanf("%d", &x);
+    v[0] = x;
+    
+    for (i = 1; i < 10; i++)
+      {
+      v[i] = 2 * v[i-1];
+      }
+    for (i = 0; i < 10; i++)
+      {
+      printf("N[%d] = %d\n", i, v[i]);
+      }
+
+    return 0;
+}
