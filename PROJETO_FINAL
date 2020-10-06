@@ -1,0 +1,102 @@
+#include <stdio.h>
+
+int main ()
+{
+    int matriz[9][9] , somamatriz[3][3];
+    int somalinha,somacoluna;
+    int l, c,teste, n, mxm, instancia = 0, solucao = 1;
+
+    scanf("%d", &n);
+
+    for(teste = 0; teste < n; teste++)
+    {
+        somalinha=0;
+        somacoluna=0;
+        //Inicializando os indices de somamatriz com 0
+        for(l=0; l<3; l++)
+        {
+            for(c=0; c<3; c++)
+            {
+                somamatriz[l][c]=0;
+            }
+        }
+
+        //Lê os valores dentro da matriz 9x9
+        for(l = 0; l < 9; l++)
+        {
+            for(c = 0; c < 9; c++)
+            {
+                scanf("%d", &matriz[l][c]);
+            }
+        }
+
+        //Soma os valores em cada uma das linhas da matriz 9x9
+        for(l = 0; l < 9; l++)
+        {
+            for(c = 0; c < 9; c++)
+            {
+		        mxm = matriz[l][c] * matriz[l][c];
+                somalinha += mxm;
+            }
+            //Se a soma nessa linha for diferente de 285, então tem um numero repetido na linha
+            if(somalinha != 285)
+            {
+                solucao=0;
+            }
+            somalinha=0;
+		}
+
+        //Soma os indices em cada uma das colunas da matriz 9x9
+        for (c = 0; c < 9; c++)
+        {
+            for (l = 0; l < 9; l++)
+            {
+		        mxm = matriz[l][c] * matriz[l][c];
+                somacoluna += mxm;
+            }
+
+            //Se a soma em uma coluna não for 285, então teremos um numero se repetindo nela.
+            if (somacoluna != 285)
+            {
+                solucao=0;
+            }
+            somacoluna=0;
+        }
+
+        //Soma os indices dentro de cada uma das matrizes 3x3 dentro da matriz 9x9 principal
+        for(l=0; l<9; l++)
+        {
+            for(c=0; c<9; c++)
+            {
+                mxm=matriz[l][c]*matriz[l][c];
+                somamatriz[l/3][c/3]+=mxm;
+            }
+        }
+
+        //Conferindo as somas das matrizes 3x3, se for diferente de 285 tem um numero repetido
+        for(l=0; l<3; l++)
+        {
+            for(c=0; c<3; c++)
+            {
+                if(somamatriz[l][c] != 285)
+                {
+                    solucao=0;
+                }
+            }
+        }
+
+        //Imprime a resposta
+        instancia++;
+		printf("Instancia %d\n", instancia);
+
+        //Imprime se a matriz 9x9 é uma solucao de sudoku ou não.
+		if (solucao == 1) {
+			printf("SIM\n\n");
+		}
+        else {
+			printf("NAO\n\n");
+		}
+		solucao = 1;
+    }
+    return 0;
+}
