@@ -1,0 +1,191 @@
+#include <stdio.h>
+
+int main ()
+{
+    int matriz[9][9], instancia = 0, solucao = 1;
+    int l, c,teste, n;
+
+    scanf("%d", &instancia);
+
+    for(teste = 0; teste < n; teste++)
+    {
+//Lê os valores dentro da matriz 9x9
+        for(l = 0; l < 9; l++)
+        {
+            for(c = 0; c < 9; c++)
+            {
+            scanf("%d", &matriz[l][c]);
+            }
+        }
+//verificando se os elementos anteriores a um número n não são iguais a n (para linha)
+        for(l = 0; l < 9; l++)
+        {
+          for(c = 0; c < 9; c++)
+          {
+            for(int j = 0 ; j < l; j++)
+            {
+              if(l == j)
+              {
+              solucao=0;
+              }
+            }
+          }
+        }
+//verificando se os elementos anteriores a um número n não são iguais a n (para coluna)
+        for(c = 0; c < 9; c++)
+        {
+          for(l = 0; l < 9; l++)
+          {
+            for(int j = 0 ; j < c; j++)
+            {
+              if(c == j)
+              {
+              solucao=0;
+              }
+            }
+          }
+        }
+//verificando se os elementos anteriores a um número n não são iguais a n (para primeira matriz 3x3)
+      for(c = 0; c < 3; c++)
+        {
+        for(l = 0; l < 3; l++)
+          {
+            for(int j = 0 ; j < c; j++)
+            {
+              if(c == j)
+              {
+              solucao=0;
+              }
+            }
+          }
+        }
+//verificando se os elementos anteriores a um número n não são iguais a n (para segunda matriz 3x3)
+      for(c = 0; c < 3; c++)
+        {
+        for(l = 3; l < 6; l++)
+          {
+            for(int j = 0 ; j < c; j++)
+            {
+              if(c == j)
+              {
+              solucao=0;
+              }
+            }
+          }
+        }
+//verificando se os elementos anteriores a um número n não são iguais a n (para terceira matriz 3x3)
+      for(c = 0; c < 3; c++)
+        {
+        for(l = 6; l < 9; l++)
+          {
+            for(int j = 0 ; j < c; j++)
+            {
+              if(c == j)
+              {
+              solucao=0;
+              }
+            }
+          }
+        }
+//verificando se os elementos anteriores a um número n não são iguais a n (para quarta matriz 3x3)
+        for(c = 3; c < 6; c++)
+        {
+          for(l = 0; l < 3; l++)
+          {
+            for(int j = 0 ; j < c; j++)
+            {
+              if(c == j)
+              {
+              solucao=0;
+              }
+            }
+          }
+        }
+//verificando se os elementos anteriores a um número n não são iguais a n (para quinta matriz 3x3)
+        for(c = 3; c < 6; c++)
+        {
+          for(l = 3; l < 6; l++)
+          {
+            for(int j = 0 ; j < c; j++)
+            {
+              if(c == j)
+              {
+              solucao=0;
+              }
+            }
+          }
+        }
+//verificando se os elementos anteriores a um número n não são iguais a n (para sexta matriz 3x3)
+        for(c = 3; c < 6; c++)
+        {
+          for(l = 6; l < 9; l++)
+          {
+            for(int j = 0 ; j < c; j++)
+            {
+              if(c == j)
+              {
+              solucao=0;
+              }
+            }
+          }
+        }
+//verificando se os elementos anteriores a um número n não são iguais a n (para setima matriz 3x3)
+        for(c = 6; c < 9; c++)
+        {
+          for(l = 0; l < 3; l++)
+          {
+            for(int j = 0 ; j < c; j++)
+            {
+              if(c == j)
+              {
+              solucao=0;
+              }
+            }
+          }
+        }
+//verificando se os elementos anteriores a um número n não são iguais a n (para oitava matriz 3x3)
+        for(c = 6; c < 9; c++)
+        {
+          for(l = 3; l < 6; l++)
+          {
+            for(int j = 0 ; j < c; j++)
+            {
+              if(c == j)
+              {
+              solucao=0;
+              }
+            }
+          }
+        }
+//verificando se os elementos anteriores a um número n não são iguais a n (para nona matriz 3x3)
+        for(c = 6; c < 9; c++)
+        {
+          for(l = 6; l < 9; l++)
+          {
+            for(int j = 0 ; j < c; j++)
+            {
+              if(c == j)
+              {
+              solucao=0;
+              }
+            }
+          }
+        }
+//Imprime a resposta
+    instancia++;
+		printf("Instancia %d\n", instancia);
+//Imprime se a matriz 9x9 é uma solucao de sudoku ou não.
+		if (solucao == 1) 
+    {
+		printf("SIM\n\n");
+		}
+    else 
+    {
+		printf("NAO\n\n");
+		}
+		solucao = 1;
+    
+    return 0;
+
+  }
+}
